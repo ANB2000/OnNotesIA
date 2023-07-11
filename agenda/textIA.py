@@ -44,4 +44,3 @@ video_links = [f'https://www.youtube.com/watch?v={video_id}' for video_id in vid
 # Imprime los enlaces a los videos recomendados
 for link in video_links:
     print(link)
-
