@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'notesapp',
     'pwa',
+    'django_bootstrap_icons',
 ]
 
 MIDDLEWARE = [
