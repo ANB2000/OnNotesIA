@@ -2,7 +2,6 @@
 import spacy
 from googleapiclient.discovery import build
 
-
 nlp = spacy.load('es_core_news_sm')
 
 def analizar_texto(texto):
@@ -19,8 +18,6 @@ palabras_clave = analizar_texto(actividad)
 print(palabras_clave)
 
 
-
-
 # Crea un objeto de servicio de la API de YouTube
 youtube = build('youtube', 'v3', developerKey='AIzaSyBtXfyvrRbMqcdZBSSCTcb0WySRLEpbiKA')#Clave API
 
@@ -32,7 +29,7 @@ response = youtube.search().list(
     part='snippet',
     q=search_term,
     type='video',
-    maxResults=5  # Número de videos recomendados que deseas obtener
+    maxResults=4  # Número de videos recomendados que deseas obtener
 ).execute()
 
 # Extrae los ID de los videos recomendados
