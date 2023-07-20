@@ -13,9 +13,9 @@ def analizar_texto(texto):
     
     return palabras_clave
 
-actividad = "Hacer ejercicio de pecho y tríceps el martes"
+actividad = "Hacer caldo de pollo con verduras"
 palabras_clave = analizar_texto(actividad)
-#print(palabras_clave)
+print(palabras_clave)
 
 
 # Crea un objeto de servicio de la API de YouTube
