@@ -16,46 +16,14 @@
 </head>
 <body>
   
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" style="border-bottom: 3px solid rebeccapurple; border-radius: 1px;"  href="{% url 'index' %}">OnNotes</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Ajustes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'comida' %}">Registro</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Sobre nosotros
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Empresa</a></li>
-            <li><a class="dropdown-item" href="#">Direccion</a></li>
-            <li><a class="dropdown-item" href="#">Contactos</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#"></a></li>
-          </ul>
-        </li>
-        <!--<li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>-->
-      </ul>
-    </div>
-  </div>
-</nav>
-<header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" >
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Company name</a>
+
+<header class="navbar sticky-top bg-ligth flex-md-nowrap p-0 shadow" >
+  <a style="color: black;" class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">OnNotes</a>
 
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
-      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        
+      <button style="background: rebeccapurple; border-radius: 11px;" class="nav-link px-3 text-white " type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        {% bs_icon 'stickies-fill' %}
       </button>
     </li>
   </ul>
@@ -63,7 +31,7 @@
 
 <div class="container-fluid">
 <div class="row">
-  <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
+  <div style=" height: 94.5vh;" class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
     <div class="offcanvas-lg offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
@@ -84,21 +52,24 @@
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
           <span>Saved reports</span>
         </h6>
-       
         <hr class="my-3">
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+          <span>Saved reports</span>
+        </h6>
+ 
       
       </div>
     </div>
   </div>
 
   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+    <br>
     <div class="card text-center">
       <div class="card-header">
         Titulo de Tarea
       </div>
       <div class="card-body">
-
-        <video src="..." class="object-fit-contain" autoplay></video>
       </div>
       <div class="card-footer text-body-secondary">
         Fecha limite para la metas
@@ -106,7 +77,9 @@
           <button type="button" class="btn btn-default">
             <svg class="bi" width="24" height="24">{% bs_icon 'star' %}</svg> Favotiros
           </button>
-          
+          <button type="button" class="btn btn-default">
+            <svg class="bi" width="24" height="24">{% bs_icon 'trash2-fill' %}</svg> Eliminar
+          </button>
       </div>
     </div>
 
