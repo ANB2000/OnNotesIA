@@ -133,9 +133,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS =[
+STATICFILES_DIRS =(
  os.path.join(BASE_DIR, 'static'),
-]
+)
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
@@ -155,14 +155,14 @@ PWA_APP_START_URL = '/'
 PWA_APP_STATUS_BAR_COLOR = 'default'
 PWA_APP_ICONS = [
     {
-        'src': '/static/images/my_app_icon.png',
-        'sizes': '16x16'
+        'src': '/static/images/icons/my_app_icon.png',
+        'sizes': '160x160'
     }
 ]
 PWA_APP_ICONS_APPLE = [
     {
-        'src': '/static/images/my_apple_icon.png',
-        'sizes': '16x16'
+        'src': '/static/images/icons/my_app_icon.png',
+        'sizes': '160x160'
     }
 ]
 PWA_APP_SPLASH_SCREEN = [
