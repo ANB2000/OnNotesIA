@@ -82,7 +82,7 @@
           <!--Button of New Homword-->
           <button type="button" class="btn btn-light mb-2" data-mdb-toggle="modal"
             data-mdb-target="#exampleCentralModal4">
-             {% bs_icon 'file-earmark-plus-fill' %} &nbsp; Add Tarea
+            {% bs_icon 'file-earmark-plus-fill' %} &nbsp; Add Tarea
           </button>
           <!-- Icon dropdown 
           <li class="nav-item dropdown">
@@ -127,7 +127,7 @@
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Nueva Tarea</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Nueva Nota</h5>
             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body p-4">
@@ -136,56 +136,47 @@
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-outline">
-                    <input type="text" id="form6Example1" class="form-control" />
-                    <label class="form-label" for="form6Example1">First name</label>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-outline">
-                    <input type="text" id="form6Example2" class="form-control" />
-                    <label class="form-label" for="form6Example2">Last name</label>
+                    <label class="form-label" for="form6Example1">Numero de tarea</label>
                   </div>
                 </div>
               </div>
 
+              <!-- Text input -->
+              <div class="form-outline mb-4">
+                <label for="validationCustom04" class="form-label">Area de actividad</label>
+                <select class="form-select" id="validationCustom04" required>
+                  <option selected disabled value="">Choose...</option>
+                  <option>Deporte</option>
+                  <option>Estudio</option>
+                  <option>Hogar</option>
+                  <option>Trabajo</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
               <!-- Text input -->
               <div class="form-outline mb-4">
                 <input type="text" id="form6Example3" class="form-control" />
-                <label class="form-label" for="form6Example3">Company name</label>
-              </div>
-
-              <!-- Text input -->
-              <div class="form-outline mb-4">
-                <input type="text" id="form6Example4" class="form-control" />
-                <label class="form-label" for="form6Example4">Address</label>
-              </div>
-
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <input type="email" id="form6Example5" class="form-control" />
-                <label class="form-label" for="form6Example5">Email</label>
-              </div>
-
-              <!-- Number input -->
-              <div class="form-outline mb-4">
-                <input type="number" id="form6Example6" class="form-control" />
-                <label class="form-label" for="form6Example6">Phone</label>
+                <label class="form-label" for="form6Example3">Nombre de nota</label>
               </div>
 
               <!-- Message input -->
               <div class="form-outline mb-4">
                 <textarea class="form-control" id="form6Example7" rows="4"></textarea>
-                <label class="form-label" for="form6Example7">Additional information</label>
+                <label class="form-label" for="form6Example7">Seccion de nota(seccion para describir tu tarea)</label>
               </div>
-
-              <!-- Checkbox -->
-              <div class="form-check d-flex justify-content-center mb-4">
-                <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-                <label class="form-check-label" for="form6Example8"> Create an account? </label>
+              <!-- lista de videos -->
+              <div class="form-outline mb-4">
+                <ul>
+                  <li>
+                    <i><a href="#">hola mundo</a></i>
+                  </li>
+                </ul>
               </div>
 
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block">Place order</button>
+              <button type="submit" class="btn btn-primary btn-block">Guardar Tarea</button>
             </form>
           </div>
         </div>
@@ -195,7 +186,7 @@
     <div class="container pt-4">
 
       <div class="card text-center">
-        <div class="card-header" style="background: #dacbe9;">
+        <div class="card-header" style="background: #66339940;">
           Titulo de Tarea
         </div>
         <div class="card-body" style="display: flex; justify-content: space-evenly;">
