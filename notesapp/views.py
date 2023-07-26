@@ -8,3 +8,6 @@ def principal(request):
     return render(request, 'app/principal.html')
 def prueva(request):
     return render(request, 'app/prueva.html')
+
+def principal1(request):
+    return render(request, 'principal.html')
