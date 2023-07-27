@@ -27,6 +27,8 @@ SECRET_KEY = 'django-insecure-#d3bd9cz@)qsm!irp3!!95h2wb-0ou6y#0kx2pjtf606sie&72
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+
 ALLOWED_HOSTS = []
 
 
@@ -42,9 +44,12 @@ INSTALLED_APPS = [
     'notesapp',
     'pwa',
     'django_bootstrap_icons',
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -59,7 +64,7 @@ ROOT_URLCONF = 'agenda.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,6 +133,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS =(
+ os.path.join(BASE_DIR, 'static'),
+)
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -145,14 +155,14 @@ PWA_APP_START_URL = '/'
 PWA_APP_STATUS_BAR_COLOR = 'default'
 PWA_APP_ICONS = [
     {
-        'src': '/static/images/my_app_icon.png',
-        'sizes': '16x16'
+        'src': '/static/images/icons/my_app_icon.png',
+        'sizes': '160x160'
     }
 ]
 PWA_APP_ICONS_APPLE = [
     {
-        'src': '/static/images/my_apple_icon.png',
-        'sizes': '16x16'
+        'src': '/static/images/icons/my_app_icon.png',
+        'sizes': '160x160'
     }
 ]
 PWA_APP_SPLASH_SCREEN = [

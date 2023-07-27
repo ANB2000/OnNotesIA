@@ -6,3 +6,8 @@ def comida(request):
     return render(request, 'app/comida.html')
 def principal(request):
     return render(request, 'app/principal.html')
+def prueva(request):
+    return render(request, 'app/prueva.html')
+def principal1(request):
+    return render(request, 'principal.html')
+
