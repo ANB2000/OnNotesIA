@@ -21,14 +21,14 @@
 
       <div class="position-sticky">
         <div class="list-group list-group-flush mx-3 mt-4">
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+          <a href="{% url 'prueva' %}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
        
             {% bs_icon 'bicycle' %}&nbsp; <span>Deportes</span>
           </a>
-          <a href="{% url 'prueva' %}" class="list-group-item list-group-item-action py-2 ripple ">
+          <a href="{% url 'ajustes' %}" class="list-group-item list-group-item-action py-2 ripple ">
             {% bs_icon 'house-heart' %}&nbsp; <span>Hogar</span>
           </a>
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple ">
+          <a href="{% url 'ajustes' %}" class="list-group-item list-group-item-action py-2 ripple ">
             {% bs_icon 'book-half' %}&nbsp;<span>Escuela</span>
           </a>
           <a href="#" class="list-group-item list-group-item-action py-2 ripple ">
@@ -175,36 +175,7 @@
       </div>
     </div>
     <!-- exampleCentralModal4 -->
-    <div class="container pt-4">
-
-      <div class="card text-center">
-        <div class="card-header" style="background: #66339940;">
-          Titulo de Tarea
-        </div>
-        <div class="card-body" style="display: flex; justify-content: space-evenly;">
-          <div class="ratio ratio-21x9" style="width: 57% !important;">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/W1yYq3hJU0A"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-
-          </div>
-
-          <!--<button type="button" class="btn btn-default">
-          <svg class="bi" width="24" height="24">{% bs_icon 'star' %}</svg> Favotiros
-        </button>-->
-        </div>
-        <div class="card-footer text-body-secondary">
-          Fecha limite para la metas
-          <input type="date" name="" id="">
-          <button type="button" class="btn btn-default">
-            <svg class="bi" width="24" height="24">{% bs_icon 'trash2-fill' %}</svg> Eliminar
-          </button>
-
-        </div>
-      </div>
-
-    </div>
+    {% block content %}{% endblock %}
   </main>
   <!--Main layout-->
 </body>

@@ -1,18 +1,36 @@
-{%load static%}
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    {% load pwa %} 
-    {% load bootstrap_icons %}
-    {% progressive_web_app_meta %}
-    <link rel="stylesheet" href='{% static "css/mdb.min.css" %}'>
-    <script src='{% static "js/mdb.min.js" %}'></script>
-  </head> 
+{% extends "app/principal.html" %}
+{% load bootstrap_icons %}
+{% block title %} prueba {% endblock %}
+{% block content %}
+<div class="container pt-4">
 
-<body>
+  <div class="card text-center">
+    <div class="card-header" style="background: #66339940;">
+    <h1>Titulo de Nota</h1>
+    </div>
+    <div class="card-body" style="display: flex; justify-content: space-evenly;">
+      <div class="ratio ratio-21x9" style="width: 57% !important;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/W1yYq3hJU0A"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
 
-</body>
-</html>
+      </div>
+
+      <!--<button type="button" class="btn btn-default">
+      <svg class="bi" width="24" height="24">{% bs_icon 'star' %}</svg> Favotiros
+    </button>-->
+    </div>
+    <div class="card-footer text-body-secondary">
+      Fecha limite para la metas
+      <input type="date" name="" id="">
+      <button type="button" class="btn btn-default">
+        <svg class="bi" width="24" height="24">{% bs_icon 'trash2-fill' %}</svg> Eliminar
+      </button>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
