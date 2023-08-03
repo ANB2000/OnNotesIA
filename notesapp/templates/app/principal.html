@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>{% block title %}{% endblock %}</title>
   {% load pwa %}
   {% load bootstrap_icons %}
   {% progressive_web_app_meta %}
@@ -122,7 +122,8 @@
             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body p-4">
-            <form>
+            <form method="POST" >
+              {% csrf_token %}
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row mb-4">
                 <div class="col">
@@ -135,7 +136,7 @@
               <!-- Text input -->
               <div class="form-outline mb-4">
                 <label for="validationCustom04" class="form-label">Area de actividad</label>
-                <select class="form-select" id="validationCustom04" required>
+                <select class="form-select" id="validationCustom04" required name="sect">
                   <option selected disabled value="">Choose...</option>
                   <option>Deporte</option>
                   <option>Estudio</option>
@@ -149,13 +150,13 @@
               </div>
               <!-- Text input -->
               <div class="form-outline mb-4">
-                <input type="text" id="form6Example3" class="form-control" />
+                <input type="text" id="form6Example3" class="form-control" name="noame" />
                 <label class="form-label" for="form6Example3">Nombre de nota</label>
               </div>
 
               <!-- Message input -->
               <div class="form-outline mb-4">
-                <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+                <textarea class="form-control" id="form6Example7" rows="4" name="Desc"></textarea>
                 <label class="form-label" for="form6Example7">Seccion de nota(seccion para describir tu tarea)</label>
               </div>
               <!-- lista de videos -->

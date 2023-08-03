@@ -75,19 +75,20 @@
       <!-- Pills navs -->
       <div class="tab-content" id="ex1-content">
         <div class="tab-pane fade show active" id="ex1-pills-1" role="tabpanel" aria-labelledby="ex1-tab-1">
-          <form class="row g-3 needs-validation" novalidate>
+          <form class="row g-3 needs-validation" method="POST">
+            {% csrf_token %}
             <div class="col-md-4">
-              <label for="validationCustomUsername" class="form-label">Nombre(S)</label>
+              <label for="validationCustomUsername" class="form-label" >Nombre(S)</label>
               <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-                required>
+                required name="nombre">
               <div class="invalid-feedback">
                 Please choose a username.
               </div>
             </div>
             <div class="col-md-4">
               <label for="validationCustom02" class="form-label">Apellido(S)</label>
-              <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-              <div class="valid-feedback">
+              <input type="text" class="form-control" id="validationCustom02"  required name="apellido"> 
+              <div class="valid-feedback" >
                 Looks good!
               </div>
             </div>
@@ -95,24 +96,18 @@
               <label for="validationCustom" class="form-label">Correo</label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="validationCustom01" required>
+                <input type="text" class="form-control" id="validationCustom01" name="email" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
             </div>
             <div class="col-md-6">
-              <label for="validationCustom03" class="form-label">City</label>
-              <input type="text" class="form-control" id="validationCustom03" required>
-              <div class="invalid-feedback">
-                Please provide a valid city.
-              </div>
-            </div>
-            <div class="col-md-3">
               <label for="validationCustom04" class="form-label">State</label>
-              <select class="form-select" id="validationCustom04" required>
+              <select class="form-select" id="validationCustom04" required name="city"> 
                 <option selected disabled value="">Choose...</option>
-                <option>...</option>
+                <option>Puebla</option>
+                <option>Aguscalientes</option>
               </select>
               <div class="invalid-feedback">
                 Please select a valid state.
@@ -121,14 +116,14 @@
 
             <div class="col-12">
               <label for="validationCustom05" class="form-label">Password</label>
-              <input type="password" class="form-control" id="validationCustom06" required>
+              <input type="password" class="form-control" id="validationCustom06" name="password" required>
               <div class="invalid-feedback">
                 Please provide a valid Password.
               </div>
             </div>
             <div class="col-12">
               <label for="validationCustom05" class="form-label">confirma el Password</label>
-              <input type="password" class="form-control" id="validationCustom07" required>
+              <input type="password" class="form-control"  name="password2" id="validationCustom07" required>
               <div class="invalid-feedback">
                 Please provide a valid Password.
               </div>
@@ -152,7 +147,7 @@
         </div>
       </div>
       <!-- Pills content -->
-      <!-- Register buttons -->
+      <!-- Register buttons
       <div class="text-center">
         <p>or sign up with:</p>
         <button type="button" class="btn btn-secondary btn-floating mx-1">
@@ -166,7 +161,7 @@
         <button type="button" class="btn btn-secondary btn-floating mx-1">
           {% bs_icon 'twitter' %}
         </button>
-      </div>
+      </div> -->
     </div>
 
   </section>
