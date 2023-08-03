@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>{% block title %}{% endblock %}</title>
   {% load pwa %}
   {% load bootstrap_icons %}
   {% progressive_web_app_meta %}
@@ -21,14 +21,14 @@
 
       <div class="position-sticky">
         <div class="list-group list-group-flush mx-3 mt-4">
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+          <a href="{% url 'prueva' %}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
        
             {% bs_icon 'bicycle' %}&nbsp; <span>Deportes</span>
           </a>
-          <a href="{% url 'prueva' %}" class="list-group-item list-group-item-action py-2 ripple ">
+          <a href="{% url 'ajustes' %}" class="list-group-item list-group-item-action py-2 ripple ">
             {% bs_icon 'house-heart' %}&nbsp; <span>Hogar</span>
           </a>
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple ">
+          <a href="{% url 'ajustes' %}" class="list-group-item list-group-item-action py-2 ripple ">
             {% bs_icon 'book-half' %}&nbsp;<span>Escuela</span>
           </a>
           <a href="#" class="list-group-item list-group-item-action py-2 ripple ">
@@ -122,7 +122,8 @@
             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body p-4">
-            <form>
+            <form method="POST" >
+              {% csrf_token %}
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row mb-4">
                 <div class="col">
@@ -135,7 +136,7 @@
               <!-- Text input -->
               <div class="form-outline mb-4">
                 <label for="validationCustom04" class="form-label">Area de actividad</label>
-                <select class="form-select" id="validationCustom04" required>
+                <select class="form-select" id="validationCustom04" required name="sect">
                   <option selected disabled value="">Choose...</option>
                   <option>Deporte</option>
                   <option>Estudio</option>
@@ -149,13 +150,13 @@
               </div>
               <!-- Text input -->
               <div class="form-outline mb-4">
-                <input type="text" id="form6Example3" class="form-control" />
+                <input type="text" id="form6Example3" class="form-control" name="noame" />
                 <label class="form-label" for="form6Example3">Nombre de nota</label>
               </div>
 
               <!-- Message input -->
               <div class="form-outline mb-4">
-                <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+                <textarea class="form-control" id="form6Example7" rows="4" name="Desc"></textarea>
                 <label class="form-label" for="form6Example7">Seccion de nota(seccion para describir tu tarea)</label>
               </div>
               <!-- lista de videos -->
@@ -175,36 +176,7 @@
       </div>
     </div>
     <!-- exampleCentralModal4 -->
-    <div class="container pt-4">
-
-      <div class="card text-center">
-        <div class="card-header" style="background: #66339940;">
-          Titulo de Tarea
-        </div>
-        <div class="card-body" style="display: flex; justify-content: space-evenly;">
-          <div class="ratio ratio-21x9" style="width: 57% !important;">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/W1yYq3hJU0A"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-
-          </div>
-
-          <!--<button type="button" class="btn btn-default">
-          <svg class="bi" width="24" height="24">{% bs_icon 'star' %}</svg> Favotiros
-        </button>-->
-        </div>
-        <div class="card-footer text-body-secondary">
-          Fecha limite para la metas
-          <input type="date" name="" id="">
-          <button type="button" class="btn btn-default">
-            <svg class="bi" width="24" height="24">{% bs_icon 'trash2-fill' %}</svg> Eliminar
-          </button>
-
-        </div>
-      </div>
-
-    </div>
+    {% block content %}{% endblock %}
   </main>
   <!--Main layout-->
 </body>
