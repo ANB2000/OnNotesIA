@@ -4,7 +4,9 @@ from django.contrib.auth.models import User
 from .models import Regist
 from .forms import NewRegist
 from django.http import HttpResponse
-
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from . textIA import obtener_links_recomendacion
 
 def home(request):
     return render(request, 'app/home.html')
@@ -36,10 +38,11 @@ def principal(request):
 
 def prueva(request):
     if request.method == "GET":
-        print('Todo bien')
+        print('Todo bien con el archivo prueba')
     else:
         print(request.POST)
     return render(request, 'app/prueva.html')
+
 def ajustes(request):
     return render(request, 'app/ajustes.html')
 
@@ -47,4 +50,13 @@ def post(request):
     print(request.POST)
     return redirect('home')
 
-
+@csrf_exempt  # Solo para fines de ejemplo. Deberías usar CSRF de manera adecuada en producción.
+def analizar_texto_view(request):
+    if request.method == 'GET':
+        print('estamos dentro de la funcion analizar texto desde Views')
+        actividad = request.GET.get('actividad', '')
+        links_recomendados = obtener_links_recomendacion(actividad)
+        for link in links_recomendados:
+            print(link)
+        return JsonResponse(links_recomendados, safe=False)
+    return JsonResponse([], safe=False)
